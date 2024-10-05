@@ -1,0 +1,19 @@
+@media screen and (max-width: 1275px) {
+    .logo{
+        display: none;
+    }
+
+    .footer_links{
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 401px) {
+    .footer_links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

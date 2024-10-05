@@ -1,0 +1,22 @@
+@media screen and (max-width: 1200px) {
+    .cards {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left_cards{
+        width: 100%;
+    }
+
+    .right_cards{
+        width: 100%;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (max-width: 690px) {
+    .right_cards {
+        justify-content: center;
+    }
+}

@@ -1,0 +1,13 @@
+@media screen and (max-width: 985px) {
+    .tokenCards {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 415px) {
+    .tokenCards {
+        align-items: center;
+        justify-content: center;
+    }
+}

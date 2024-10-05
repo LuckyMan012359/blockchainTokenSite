@@ -1,0 +1,10 @@
+@media screen and (max-width: 500px) {
+    .myTokenButtons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .myTokenButtons>div{
+        width: 100%;
+    }
+}

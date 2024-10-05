@@ -1,0 +1,36 @@
+{
+  "name": "initial-next-project",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@wagmi/core": "^2.13.8",
+    "antd": "^5.21.2",
+<<<<<<< HEAD
+    "chart.js": "^4.4.4",
+    "connectkit": "^1.8.2",
+    "dotenv": "^16.4.5",
+    "ethers": "^6.13.3",
+    "framer-motion": "^11.11.1",
+=======
+>>>>>>> origin/main
+    "next": "14.2.13",
+    "react": "^18",
+    "react-dom": "^18",
+    "react-icons": "^5.3.0",
+    "wagmi": "^2.12.17"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
+  }
+}

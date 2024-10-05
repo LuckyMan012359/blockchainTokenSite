@@ -1,0 +1,42 @@
+/* BuyAndSellCart.module.css */
+
+.radioGroupContainer {
+    display: flex;
+    width: 100%;
+}
+
+.radioButton {
+    width: 50%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #d9d9d9;
+    font-size: 16px;
+    border-radius: 10px 0 0 10px;
+    background-color: #e0e7ff;
+    color: #2d3748;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.radioButtonActive {
+    background-color: #ffe958;
+    color: #000;
+}
+
+.radioButton:first-child {
+    border-radius: 10px 0 0 10px;
+}
+
+.radioButton:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+.radioButton:hover {
+    background-color: #c3dafd;
+}
+
+.radioButtonActive:hover {
+    background-color: #ffe958;
+}
