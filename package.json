@@ -11,14 +11,11 @@
   "dependencies": {
     "@wagmi/core": "^2.13.8",
     "antd": "^5.21.2",
-<<<<<<< HEAD
     "chart.js": "^4.4.4",
     "connectkit": "^1.8.2",
     "dotenv": "^16.4.5",
     "ethers": "^6.13.3",
     "framer-motion": "^11.11.1",
-=======
->>>>>>> origin/main
     "next": "14.2.13",
     "react": "^18",
     "react-dom": "^18",
