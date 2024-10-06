@@ -7,7 +7,7 @@ import { IoIosLogIn } from "react-icons/io";
 import { useAccount, useDisconnect } from "wagmi";
 import { Connector, useChainId, useConnect } from "wagmi";
 import metamaskUrl from "@/assets/metamask.png";
-import otherWallet from "@/assets/download.svg";
+import walletConnect from "@/assets/Walletconnect.png";
 import Image from "next/image";
 
 interface walletSidebar {
@@ -100,18 +100,18 @@ const WalletConnect = ({ sidebar }: walletSidebar) => {
               connect({ connector: injected(), chainId });
               setIsModalOpen(false);
             }}
-            walletName="Metamask"
+            walletName={metamaskConnector.name}
           />
 
           <ConnectorButton
             key={connector.uid}
-            imageUrl={otherWallet.src}
+            imageUrl={walletConnect.src}
             connector={connector}
             onClick={() => {
               connect({ connector, chainId });
               setIsModalOpen(false);
             }}
-            walletName="Other wallets"
+            walletName={connector.name}
           />
         </div>
       </Modal>
