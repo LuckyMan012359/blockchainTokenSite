@@ -9,18 +9,12 @@ import gitbookUrl from "@/assets/gitbookIcon.png";
 import { RiTwitterXFill } from "react-icons/ri";
 import { BiLogoTelegram } from "react-icons/bi";
 import { IoClose, IoLogoYoutube } from "react-icons/io5";
-import { IoIosLogIn, IoIosSearch } from "react-icons/io";
+import { IoIosSearch } from "react-icons/io";
 import { PiList } from "react-icons/pi";
-
-import { useRouter } from "next/navigation";
 
 import dynamic from "next/dynamic";
 
-import {
-  darkTheme,
-  getDefaultConfig,
-  RainbowKitProvider,
-} from "@rainbow-me/rainbowkit";
+import { darkTheme, RainbowKitProvider } from "@rainbow-me/rainbowkit";
 import { WagmiProvider } from "wagmi";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { config } from "./wagmi";
@@ -40,19 +34,9 @@ export const PageHeader = ({ pageName }: PageName) => {
 
   const [isClient, setIsClient] = useState<boolean>(false);
 
-  const router = useRouter();
-
   useEffect(() => {
     setIsClient(false);
   }, []);
-
-  const handleLogoClick = () => {
-    router.push("/");
-  };
-
-  const handleLaunchTokenClick = () => {
-    router.push("/tokenForm");
-  };
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -78,14 +62,15 @@ export const PageHeader = ({ pageName }: PageName) => {
               isClient ? "" : "overflow-hidden"
             } relative bg-[#FFE958] h-[77px] w-full pl-[350px] pr-[350px] flex justify-between items-center max-[1720px]:px-[200px] max-[1440px]:px-[105px] max-[870px]:px-[50px] max-[768px]:px-[10px]`}
           >
-            <div
-              className="flex items-center gap-[32px] cursor-pointer"
-              onClick={handleLogoClick}
-            >
-              <Image src={logoUrl} alt="logo" className="h-[70px] w-[70px]" />
-              <p className="text-[#000000] text-[14px] font-[500] not-italic">
-                My Tokens
-              </p>
+            <div className="flex items-center gap-[32px] cursor-pointer">
+              <a href={"/"}>
+                <Image src={logoUrl} alt="logo" className="h-[70px] w-[70px]" />
+              </a>
+              <a href={"/myToken"}>
+                <p className="text-[#000000] text-[14px] font-[500] not-italic">
+                  My Tokens
+                </p>
+              </a>
             </div>
             <div className="flex justify-end gap-[13px] items-center max-[678px]:hidden">
               {pageName == "topPage" && (
@@ -118,12 +103,11 @@ export const PageHeader = ({ pageName }: PageName) => {
               <div className="h-[30px] w-[30px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center hover:cursor-pointer">
                 <IoLogoYoutube className="text-[#000000]" />
               </div>
-              <div
-                className="h-[30px] w-[106px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center text-[14px] font-[500] not-italic text-[#000000] hover:cursor-pointer"
-                onClick={handleLaunchTokenClick}
-              >
-                Launch Token
-              </div>
+              <a href={"/tokenForm"}>
+                <div className="h-[30px] w-[106px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center text-[14px] font-[500] not-italic text-[#000000] hover:cursor-pointer">
+                  Launch Token
+                </div>
+              </a>
               <WalletConnect sidebar={false} />
             </div>
             {/* Toggle Button */}
@@ -164,12 +148,11 @@ export const PageHeader = ({ pageName }: PageName) => {
                 </div>
               </div>
               <div className="flex flex-col gap-[15px] mt-[15px]">
-                <div
-                  className="h-[30px] w-full border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center text-[14px] font-[500] not-italic text-[#000000] hover:cursor-pointer"
-                  onClick={handleLaunchTokenClick}
-                >
-                  Launch Token
-                </div>
+                <a href={"/tokenForm"}>
+                  <div className="h-[30px] w-full border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center text-[14px] font-[500] not-italic text-[#000000] hover:cursor-pointer">
+                    Launch Token
+                  </div>
+                </a>
                 <WalletConnect sidebar={true} />
               </div>
             </div>

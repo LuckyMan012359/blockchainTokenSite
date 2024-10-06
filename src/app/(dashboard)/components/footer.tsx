@@ -4,16 +4,9 @@ import Image from "next/image";
 import logoUrl from "@/assets/logo2.png";
 import { FaTelegramPlane } from "react-icons/fa";
 
-import { useRouter } from "next/navigation";
-
 import "./footer.css";
 
 const PageFooter = () => {
-  const router = useRouter();
-
-  const handleMyTokenClick = () => {
-    router.push("/myToken");
-  };
   return (
     <div className="w-full flex flex-col items-center bg-black text-white py-10 px-[350px] max-[1720px]:px-[200px] max-[1440px]:px-[105px] max-[870px]:px-[50px] max-[768px]:px-[10px]">
       <div className="w-full flex justify-between px-[50px] py-6 border-b border-gray-700">
@@ -26,9 +19,9 @@ const PageFooter = () => {
         <div className="flex gap-[100px] footer_links">
           <div className="flex flex-col space-y-8">
             <span className="cursor-pointer">Explore</span>
-            <span className="cursor-pointer" onClick={handleMyTokenClick}>
-              My tokens
-            </span>
+            <a href="/myToken">
+              <span className="cursor-pointer">My tokens</span>
+            </a>
             <span className="cursor-pointer">Rewards</span>
           </div>
 

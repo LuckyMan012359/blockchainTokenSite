@@ -2,19 +2,11 @@ import React, { useState } from "react";
 import { BsSearch } from "react-icons/bs";
 import { HiPlus } from "react-icons/hi";
 
-import { useRouter } from "next/navigation";
-
 import "./tokensComponent.css";
 import CryptoCard from "@/app/(dashboard)/components/cryptoCards/components/cryptoCard";
 
 const TokensComponent: React.FC = () => {
-  const router = useRouter();
-
   const [isData, setIsData] = useState(false);
-
-  const handleLaunchTokenClick = () => {
-    router.push("/tokenForm");
-  };
 
   // Sample data array
   const dataArray = [1, 2, 3, 4, 5];
@@ -37,13 +29,12 @@ const TokensComponent: React.FC = () => {
         </div>
         <div className="flex justify-end">
           {isData === false && (
-            <button
-              className="px-4 py-2 bg-[#FFE958] text-black rounded-[5px] hover:bg-yellow-500 transition-all duration-300 flex items-center"
-              onClick={handleLaunchTokenClick}
-            >
-              <HiPlus className="text-[16px]" />
-              &nbsp;Launch Token
-            </button>
+            <a href="/tokenForm">
+              <button className="px-4 py-2 bg-[#FFE958] text-black rounded-[5px] hover:bg-yellow-500 transition-all duration-300 flex items-center">
+                <HiPlus className="text-[16px]" />
+                &nbsp;Launch Token
+              </button>
+            </a>
           )}
         </div>
       </div>

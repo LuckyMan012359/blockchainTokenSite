@@ -1,17 +1,9 @@
 import React from "react";
 import { GoClock } from "react-icons/go";
 
-import { useRouter } from "next/navigation";
-
 const CryptoCard: React.FC = () => {
-  const router = useRouter();
-
-  const handleTrendingTokenClick = () => {
-    router.push("/trendingToken");
-  };
-
   return (
-    <div onClick={handleTrendingTokenClick}>
+    <a href="/trendingToken">
       <div className="group max-w-xs mx-auto w-[235px] rounded-[10px] border-[1px] border-solid border-[#000000] pb-[5px] bg-white shadow-custom-inset overflow-visible flex flex-col justify-between items-center hover:cursor-pointer hover:shadow-custom-inset-new transition-shadow duration-300 ease-in-out">
         {/* Top Image Section */}
         <div className="relative bg-gray-300 h-[225px] w-full rounded-t-[10px] flex items-center justify-center">
@@ -58,7 +50,7 @@ const CryptoCard: React.FC = () => {
           </div>
         </div>
       </div>
-    </div>
+    </a>
   );
 };
 
