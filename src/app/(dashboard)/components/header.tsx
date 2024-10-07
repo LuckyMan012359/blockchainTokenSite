@@ -8,7 +8,7 @@ import logoUrl from "@/assets/logo.png";
 import gitbookUrl from "@/assets/gitbookIcon.png";
 import { RiTwitterXFill } from "react-icons/ri";
 import { BiLogoTelegram } from "react-icons/bi";
-import { IoClose, IoLogoYoutube } from "react-icons/io5";
+import { IoClose } from "react-icons/io5";
 import { IoIosSearch } from "react-icons/io";
 import { PiList } from "react-icons/pi";
 
@@ -100,9 +100,6 @@ export const PageHeader = ({ pageName }: PageName) => {
               <div className="h-[30px] w-[30px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center hover:cursor-pointer">
                 <BiLogoTelegram className="text-[#000000]" />
               </div>
-              <div className="h-[30px] w-[30px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center hover:cursor-pointer">
-                <IoLogoYoutube className="text-[#000000]" />
-              </div>
               <a href={"/tokenForm"}>
                 <div className="h-[30px] w-[106px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center text-[14px] font-[500] not-italic text-[#000000] hover:cursor-pointer">
                   Launch Token
@@ -142,9 +139,6 @@ export const PageHeader = ({ pageName }: PageName) => {
                 </div>
                 <div className="h-[30px] w-[30px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center hover:cursor-pointer">
                   <BiLogoTelegram className="text-[#000000]" />
-                </div>
-                <div className="h-[30px] w-[30px] border-[1px] border-[#000000] rounded-[4px] border-solid flex justify-center items-center hover:cursor-pointer">
-                  <IoLogoYoutube className="text-[#000000]" />
                 </div>
               </div>
               <div className="flex flex-col gap-[15px] mt-[15px]">
