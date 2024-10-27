@@ -32,7 +32,7 @@ export const CryptoCards = () => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full">
       <div className="flex items-center gap-[10px] px-[300px] pt-[60px] bg-gray max-[1850px]:px-[260px] max-[1720px]:px-[200px] max-[1440px]:px-[105px] max-[870px]:px-[50px] max-[768px]:px-[10px] flex-wrap">
         {/* Toggle Section */}
         <div className="flex items-center bg-teal-400 rounded-lg p-2">

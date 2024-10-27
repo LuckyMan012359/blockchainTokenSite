@@ -65,7 +65,18 @@ const DrawdownChart: React.FC = () => {
     };
   }, []);
 
-  return <canvas ref={chartRef} width={600} height={300}></canvas>;
+  return (
+    <div
+      style={{
+        minWidth: "650px",
+        height: "100%",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+    >
+      <canvas ref={chartRef} width={600} height={300}></canvas>
+    </div>
+  );
 };
 
 export default DrawdownChart;

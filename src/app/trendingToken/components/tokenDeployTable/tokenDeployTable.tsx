@@ -243,8 +243,12 @@ const onChange: TableProps<DataType>["onChange"] = (
   console.log("params", pagination, filters, sorter, extra);
 };
 
-const TokenDeployTable: React.FC = () => (
-  <Table<DataType> columns={columns} dataSource={data} onChange={onChange} />
-);
+const TokenDeployTable = () => {
+  return (
+    <div className="min-w-[700px]">
+      <Table columns={columns} dataSource={data} onChange={onChange} />
+    </div>
+  );
+};
 
 export default TokenDeployTable;
