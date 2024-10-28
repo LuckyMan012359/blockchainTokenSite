@@ -10,7 +10,7 @@ const DrawdownChart: React.FC = () => {
       className="md:min-h-0 rounded-lg border w-full h-full overflow-hidden"
     >
       <iframe
-        src="https://dexscreener.com/ethereum/0x94ab9133c9664179994d7a5207a0a9dba727b15a?theme=light"
+        src="https://dexscreener.com/ethereum/0x94ab9133c9664179994d7a5207a0a9dba727b15a?embed=1&theme=dark&info=0"
         className="w-full h-full"
       ></iframe>
     </div>
