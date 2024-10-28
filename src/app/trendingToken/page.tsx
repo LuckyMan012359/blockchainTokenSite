@@ -24,9 +24,9 @@ const TrendingToken = () => {
             <Cards />
             <div className="grow w-full pt-[20px] flex flex-col justify-between gap-[51px]">
               <Chart />
-              <div className="h-[300px] grow overflow-auto border-[1px] border-[#000000] border-solid rounded-[5px] bg-[#ffffff] p-[15px] max-2xl:w-full">
+              {/* <div className="h-[300px] grow overflow-auto border-[1px] border-[#000000] border-solid rounded-[5px] bg-[#ffffff] p-[15px] max-2xl:w-full">
                 <TokenDeployTable />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="grow flex 2xl:flex-col justify-end items-end gap-[20px] right_cards max-2xl:w-full flex-wrap max-2xl:justify-between max-2xl:items-start">

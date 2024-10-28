@@ -3,69 +3,78 @@
 import React, { useEffect, useRef } from "react";
 import { Chart, registerables } from "chart.js";
 
-// Register chart.js modules
-Chart.register(...registerables);
-
-const skipped = (ctx: any, value: any) =>
-  ctx.p0.skip || ctx.p1.skip ? value : undefined;
-const down = (ctx: any, value: any) =>
-  ctx.p0.parsed.y > ctx.p1.parsed.y ? value : undefined;
-
 const DrawdownChart: React.FC = () => {
-  // Define a reference with a type for the canvas element
-  const chartRef = useRef<HTMLCanvasElement | null>(null);
-
-  useEffect(() => {
-    // Ensure the chartRef and its context exist
-    if (!chartRef.current) return;
-
-    const ctx = chartRef.current.getContext("2d");
-    if (!ctx) return;
-
-    const genericOptions = {
-      fill: false,
-      interaction: {
-        intersect: false,
-      },
-      radius: 0,
-    };
-
-    function formatNumber(number: number): string {
-      return number.toString().padStart(2, "0");
-    }
-
-    // Create a new Chart instance
-    const chart = new Chart(ctx, {
-      type: "line",
-      data: {
-        labels: Array.from(
-          { length: 8 },
-          (_, i) =>
-            `${formatNumber(3 * (1 + i))}:${formatNumber(i % 2 == 0 ? 3 : 33)}`
-        ),
-        datasets: [
-          {
-            data: [65, 59, NaN, 48, 56, 57, 40],
-            segment: {
-              borderColor: (ctx) =>
-                skipped(ctx, "rgb(0,0,0,0.2)") || down(ctx, "rgb(192,75,75)"),
-              borderDash: (ctx) => skipped(ctx, [6, 6]),
-            },
-            borderWidth: 3,
-            spanGaps: true,
-          },
-        ],
-      },
-      options: genericOptions,
-    });
-
-    // Cleanup function to destroy the chart on component unmount
-    return () => {
-      chart.destroy();
-    };
-  }, []);
-
-  return <canvas ref={chartRef} width={600} height={300}></canvas>;
+  return (
+    <div
+      id="dexscreener-embed"
+      className="md:min-h-0 rounded-lg border w-full h-full overflow-hidden"
+    >
+      <iframe
+        src="https://dexscreener.com/ethereum/0x94ab9133c9664179994d7a5207a0a9dba727b15a?theme=light"
+        className="w-full h-full"
+      ></iframe>
+    </div>
+  );
 };
 
 export default DrawdownChart;
+
+// import React, { useEffect, useRef, memo } from "react";
+
+// const TradingViewWidget: React.FC = () => {
+//   const container = useRef<HTMLDivElement | null>(null);
+
+//   useEffect(() => {
+//     if (!container.current) return;
+
+//     // Remove existing children to prevent duplicates
+//     while (container.current.firstChild) {
+//       container.current.removeChild(container.current.firstChild);
+//     }
+
+//     const script = document.createElement("script");
+//     script.src =
+//       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+//     script.type = "text/javascript";
+//     script.async = true;
+//     script.innerHTML = `
+//       {
+//         "autosize": true,
+//         "symbol": "NASDAQ:AAPL",
+//         "interval": "D",
+//         "timezone": "Etc/UTC",
+//         "theme": "dark",
+//         "style": "1",
+//         "locale": "en",
+//         "allow_symbol_change": true,
+//         "calendar": false,
+//         "support_host": "https://www.tradingview.com"
+//       }`;
+
+//     container.current.appendChild(script);
+//   }, []);
+
+//   return (
+//     <div
+//       className="tradingview-widget-container"
+//       ref={container}
+//       style={{ height: "100%", width: "100%" }}
+//     >
+//       <div
+//         className="tradingview-widget-container__widget"
+//         style={{ height: "100%", width: "100%" }}
+//       ></div>
+//       <div className="tradingview-widget-copyright">
+//         <a
+//           href="https://www.tradingview.com/"
+//           rel="noopener nofollow"
+//           target="_blank"
+//         >
+//           <span className="blue-text">Track all markets on TradingView</span>
+//         </a>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default memo(TradingViewWidget);
