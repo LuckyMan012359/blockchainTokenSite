@@ -245,7 +245,7 @@ const onChange: TableProps<DataType>["onChange"] = (
 
 const TokenDeployTable = () => {
   return (
-    <div className="min-w-[700px]">
+    <div className="min-w-[680px]">
       <Table columns={columns} dataSource={data} onChange={onChange} />
     </div>
   );
